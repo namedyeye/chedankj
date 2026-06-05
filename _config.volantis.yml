@@ -1,0 +1,138 @@
+debug: false
+
+navbar:
+  visiable: auto
+  logo:
+    img:
+    icon: fa-solid fa-blog
+    title: namedyeye
+  menu:
+    - name: 首页
+      icon: fa-solid fa-house
+      url: /
+    - name: 分类
+      icon: fa-solid fa-folder-open
+      url: categories/
+    - name: 标签
+      icon: fa-solid fa-tags
+      url: tags/
+    - name: 归档
+      icon: fa-solid fa-box-archive
+      url: archives/
+    - name: 关于
+      icon: fa-solid fa-circle-info
+      url: about/
+  search: 搜索文章
+
+cover:
+  height_scheme: half
+  layout_scheme: dock
+  display:
+    home: true
+    archive: true
+    others: false
+  background: https://gcore.jsdelivr.net/gh/MHG-LAB/cron@gh-pages/bing/bing.jpg
+  logo:
+  title: namedyeye 的博客
+  subtitle: Agent 使用技巧与技术记录
+  search: 搜索文章
+  features:
+    - name: 文章
+      icon: fa-solid fa-rss
+      img:
+      url: /
+    - name: 分类
+      icon: fa-solid fa-folder-open
+      img:
+      url: categories/
+    - name: 标签
+      icon: fa-solid fa-tags
+      img:
+      url: tags/
+    - name: 关于
+      icon: fa-solid fa-circle-info
+      img:
+      url: about/
+
+article:
+  preview:
+    scheme: landscape
+    auto_excerpt: true
+    hide_excerpt: false
+    author: false
+  body:
+    top_meta: [category, date]
+    bottom_meta: [updated, tags]
+    footer_widget:
+      recommended_article:
+        enable: false
+      related_posts:
+        enable: false
+      copyright:
+        enable: false
+      donate:
+        enable: false
+    meta_library:
+      author:
+        name: namedyeye
+        url: /
+
+comments:
+  service: false
+
+sidebar:
+  for_page: [blogger, category, tagcloud, webinfo]
+  for_post: [toc]
+  widget_library:
+    blogger:
+      class: blogger
+      display: [desktop, mobile]
+      avatar:
+      shape: rectangle
+      title: namedyeye
+      subtitle: Agent 使用技巧与技术记录
+      jinrishici: false
+      social:
+        - icon: fa-brands fa-github
+          url: https://github.com/namedyeye
+    category:
+      header:
+        url: /chedankj/categories/
+    tagcloud:
+      header:
+        url: /chedankj/tags/
+    webinfo:
+      type:
+        article:
+          enable: true
+        runtime:
+          enable: false
+        wordcount:
+          enable: false
+        visitcounter:
+          enable: false
+        lastupd:
+          enable: true
+
+site_footer:
+  layout: [social, info, copyright]
+  social:
+    - icon: fa-brands fa-github
+      url: https://github.com/namedyeye
+  source: https://github.com/namedyeye/chedankj/
+  copyright: "[Copyright](/) © namedyeye"
+
+plugins:
+  sitesjs:
+    enable: false
+  friendsjs:
+    enable: false
+  contributorsjs:
+    enable: false
+
+search:
+  enable: true
+  service: hexo
+
+structured_data:
+  enable: false
