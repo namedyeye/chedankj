@@ -1,0 +1,80 @@
+<%
+  const catalog = site.data.site_catalog || [];
+  const normalizePath = function (value) {
+    const raw = String(value || '').replace(/\\/g, '/').replace(/index\.html$/, '');
+    return raw.replace(/^\/+/, '').replace(/\/?$/, '/');
+  };
+  const currentPath = normalizePath((page && page.path) || path || '');
+  const startsWithCover = (page && page.cover === true) || currentPath === '/' || currentPath.indexOf('archives/') === 0;
+  const catalogClass = 'tc-site-catalog' + (startsWithCover ? ' is-over-cover' : '');
+  const hasPath = item => item && item.path;
+  const hasChildren = item => item && item.children && item.children.length;
+  const itemUrl = item => url_for(item.path || '/');
+  const isExact = item => hasPath(item) && normalizePath(item.path) === currentPath;
+  const isCurrent = item => isExact(item) && !hasChildren(item);
+  const hasCurrent = function (item) {
+    if (!item) return false;
+    if (isExact(item)) return true;
+    return (item.children || []).some(hasCurrent);
+  };
+  const linkClass = function (item, level) {
+    return [
+      'tc-site-catalog__link',
+      'tc-site-catalog__link--l' + level,
+      isCurrent(item) ? 'is-current' : '',
+      hasCurrent(item) ? 'is-active' : ''
+    ].filter(Boolean).join(' ');
+  };
+%>
+
+<% if (catalog.length) { %>
+<nav class="<%- catalogClass %>" aria-label="全站目录">
+  <button class="tc-site-catalog__toggle" type="button" aria-expanded="false" aria-controls="tc-site-catalog-body" title="全站目录">
+    <i class="fa-solid fa-list-ul fa-fw" aria-hidden="true"></i>
+    <span>全站目录</span>
+  </button>
+  <div class="tc-site-catalog__body" id="tc-site-catalog-body">
+    <div class="tc-site-catalog__actions">
+      <button class="tc-site-catalog__back" type="button" title="返回上一页" aria-label="返回上一页">
+        <i class="fa-solid fa-arrow-left fa-fw" aria-hidden="true"></i>
+        <span>返回上一页</span>
+      </button>
+    </div>
+    <ol class="tc-site-catalog__list tc-site-catalog__list--l1">
+      <% catalog.forEach(function (section, sectionIndex) { %>
+        <% const sectionPanelId = 'tc-site-catalog-l2-' + sectionIndex; %>
+        <li class="tc-site-catalog__item tc-site-catalog__item--l1 <%= hasCurrent(section) ? 'is-open' : '' %>">
+          <% if (hasChildren(section)) { %>
+            <button class="<%= linkClass(section, 1) %> tc-site-catalog__branch" type="button" aria-expanded="<%= hasCurrent(section) ? 'true' : 'false' %>" aria-controls="<%- sectionPanelId %>"><span><%- section.title %></span></button>
+          <% } else { %>
+            <span class="tc-site-catalog__link tc-site-catalog__link--l1"><span><%- section.title %></span></span>
+          <% } %>
+          <% if (section.children && section.children.length) { %>
+            <ol class="tc-site-catalog__list tc-site-catalog__list--l2" id="<%- sectionPanelId %>">
+              <% section.children.forEach(function (group, groupIndex) { %>
+                <% const groupPanelId = 'tc-site-catalog-l3-' + sectionIndex + '-' + groupIndex; %>
+                <li class="tc-site-catalog__item tc-site-catalog__item--l2 <%= hasCurrent(group) ? 'is-open' : '' %>">
+                  <% if (hasChildren(group)) { %>
+                    <button class="<%= linkClass(group, 2) %> tc-site-catalog__branch" type="button" aria-expanded="<%= hasCurrent(group) ? 'true' : 'false' %>" aria-controls="<%- groupPanelId %>"><span><%- group.title %></span></button>
+                  <% } else { %>
+                    <span class="tc-site-catalog__link tc-site-catalog__link--l2"><span><%- group.title %></span></span>
+                  <% } %>
+                  <% if (group.children && group.children.length) { %>
+                    <ol class="tc-site-catalog__list tc-site-catalog__list--l3" id="<%- groupPanelId %>">
+                      <% group.children.forEach(function (article) { %>
+                        <li class="tc-site-catalog__item tc-site-catalog__item--l3">
+                          <a class="<%= linkClass(article, 3) %>" href="<%- itemUrl(article) %>"><span><%- article.title %></span></a>
+                        </li>
+                      <% }) %>
+                    </ol>
+                  <% } %>
+                </li>
+              <% }) %>
+            </ol>
+          <% } %>
+        </li>
+      <% }) %>
+    </ol>
+  </div>
+</nav>
+<% } %>

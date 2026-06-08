@@ -1,0 +1,1298 @@
+tc_light_vars()
+  color-scheme: light
+  --tc-page-bg: #edf4f7
+  --tc-page-spot-a: rgba(15, 143, 138, .11)
+  --tc-page-spot-b: rgba(9, 111, 145, .08)
+  --tc-header-bg: rgba(255, 255, 255, .78)
+  --tc-blur-bg: rgba(255, 255, 255, .86)
+  --tc-cover-filter: brightness(.86) saturate(1.03)
+  --tc-cover-menu-bg: rgba(14, 44, 58, .46)
+  --tc-cover-menu-text: rgba(247, 251, 252, .9)
+  --tc-cover-menu-hover: rgba(15, 143, 138, .22)
+  --tc-border: rgba(20, 58, 76, .12)
+  --tc-border-strong: rgba(15, 143, 138, .22)
+  --tc-panel-start: rgba(255, 255, 255, .98)
+  --tc-panel-end: rgba(241, 249, 250, .92)
+  --tc-panel-border: rgba(15, 98, 112, .14)
+  --tc-panel-shadow: 0 18px 38px rgba(20, 44, 57, .08)
+  --tc-card-bg: rgba(255, 255, 255, .94)
+  --tc-card-hover: rgba(247, 252, 252, .98)
+  --tc-card-border: rgba(20, 58, 76, .12)
+  --tc-card-border-hover: rgba(15, 143, 138, .28)
+  --tc-card-shadow: 0 14px 30px rgba(20, 44, 57, .09)
+  --tc-text: #334653
+  --tc-heading: #142638
+  --tc-heading-soft: #203746
+  --tc-muted: #6b7c87
+  --tc-link: #096f91
+  --tc-accent: #0f8f8a
+  --tc-accent-strong: #087f7a
+  --tc-accent-soft: rgba(15, 143, 138, .10)
+  --tc-accent-border: rgba(15, 143, 138, .22)
+  --tc-chip-text: #0c5e63
+  --tc-chip-bg: rgba(9, 111, 145, .08)
+  --tc-chip-border: rgba(9, 111, 145, .16)
+  --tc-button-bg: #0f8f8a
+  --tc-button-bg-hover: #096f91
+  --tc-button-text: #ffffff
+  --tc-route-start: #0f8f8a
+  --tc-route-end: #096f91
+  --tc-route-text: #ffffff
+  --tc-route-border: rgba(255, 255, 255, .42)
+  --tc-route-shadow: 0 14px 26px rgba(9, 111, 145, .18)
+  --tc-code-bg: #071821
+  --tc-code-border: rgba(15, 143, 138, .34)
+  --tc-code-text: #f7fbfc
+  --tc-image-bg: #f5fafb
+  --tc-image-border: rgba(15, 143, 138, .18)
+  --tc-modal-bg: rgba(6, 16, 22, .88)
+
+tc_dark_vars()
+  color-scheme: dark
+  --tc-page-bg: #151d24
+  --tc-page-spot-a: rgba(88, 213, 201, .14)
+  --tc-page-spot-b: rgba(116, 215, 255, .11)
+  --tc-header-bg: rgba(28, 39, 48, .72)
+  --tc-blur-bg: rgba(36, 49, 59, .86)
+  --tc-cover-filter: brightness(.72) saturate(.95)
+  --tc-cover-menu-bg: rgba(36, 49, 59, .56)
+  --tc-cover-menu-text: rgba(238, 247, 251, .86)
+  --tc-cover-menu-hover: rgba(88, 213, 201, .16)
+  --tc-border: rgba(143, 170, 184, .12)
+  --tc-border-strong: rgba(126, 231, 219, .24)
+  --tc-panel-start: rgba(36, 49, 59, .94)
+  --tc-panel-end: rgba(28, 39, 48, .78)
+  --tc-panel-border: rgba(126, 231, 219, .16)
+  --tc-panel-shadow: 0 18px 38px rgba(0, 0, 0, .18)
+  --tc-card-bg: rgba(36, 49, 59, .82)
+  --tc-card-hover: rgba(50, 68, 80, .9)
+  --tc-card-border: rgba(126, 231, 219, .16)
+  --tc-card-border-hover: rgba(126, 231, 219, .32)
+  --tc-card-shadow: 0 14px 30px rgba(0, 0, 0, .2)
+  --tc-text: #d7e3e9
+  --tc-heading: #f4fbff
+  --tc-heading-soft: #eef7fb
+  --tc-muted: #a6b8c3
+  --tc-link: #74d7ff
+  --tc-accent: #8be9df
+  --tc-accent-strong: #58d5c9
+  --tc-accent-soft: rgba(126, 231, 219, .1)
+  --tc-accent-border: rgba(126, 231, 219, .24)
+  --tc-chip-text: rgba(238, 247, 251, .92)
+  --tc-chip-bg: rgba(116, 215, 255, .12)
+  --tc-chip-border: rgba(116, 215, 255, .18)
+  --tc-button-bg: #8be9df
+  --tc-button-bg-hover: #74d7ff
+  --tc-button-text: #151d24
+  --tc-route-start: #8be9df
+  --tc-route-end: #74d7ff
+  --tc-route-text: #102028
+  --tc-route-border: rgba(238, 247, 251, .38)
+  --tc-route-shadow: 0 14px 26px rgba(116, 215, 255, .16)
+  --tc-code-bg: #061016
+  --tc-code-border: rgba(139, 233, 223, .52)
+  --tc-code-text: #ffffff
+  --tc-image-bg: rgba(18, 28, 39, .86)
+  --tc-image-border: rgba(126, 231, 219, .18)
+  --tc-modal-bg: rgba(6, 16, 22, .88)
+
+:root
+  tc_light_vars()
+
+@media (prefers-color-scheme: dark)
+  :root:not([color-scheme])
+    tc_dark_vars()
+
+[color-scheme='dark']
+  tc_dark_vars()
+
+[color-scheme='light']
+  tc_light_vars()
+
+body
+  background:
+    radial-gradient(circle at 20% 0%, var(--tc-page-spot-a), transparent 30%),
+    radial-gradient(circle at 80% 12%, var(--tc-page-spot-b), transparent 28%),
+    var(--tc-page-bg)
+  color: var(--tc-text)
+
+.l_header
+  background: var(--tc-header-bg)
+
+.blur,
+.white-box.blur
+  background: var(--tc-blur-bg) !important
+  backdrop-filter: saturate(150%) blur(18px)
+
+.cover-wrapper .cover-bg
+  filter: var(--tc-cover-filter)
+
+.cover-wrapper .cover-body .title,
+.cover-wrapper .cover-body .subtitle
+  text-shadow: 0 2px 12px rgba(0, 0, 0, .35)
+
+.cover-wrapper .cover-body .title
+  display: inline-block
+  font-weight: 800
+  font-stretch: expanded
+  letter-spacing: 0
+  transform: scaleX(1.08)
+  transform-origin: center
+
+.cover-wrapper .cover-body .subtitle
+  font-size: .95rem
+  line-height: 1.45
+  letter-spacing: 0
+  opacity: .9
+
+#l_cover .cover-wrapper#full
+  margin-bottom: 0
+
+.cover-wrapper.dock .menu
+  background: var(--tc-cover-menu-bg)
+  backdrop-filter: blur(18px)
+  width: unquote('calc(100% - 32px)')
+  max-width: 760px
+
+.cover-wrapper.dock .menu .list-h a
+  color: var(--tc-cover-menu-text)
+  min-width: 104px
+  padding: 10px 12px
+  white-space: nowrap
+
+.cover-wrapper.dock .menu .list-h a p
+  white-space: nowrap
+  word-break: keep-all
+  min-width: max-content
+  line-height: 1.2
+
+.cover-wrapper.dock .menu .list-h a:hover,
+.cover-wrapper.dock .menu .list-h a.active
+  background: var(--tc-cover-menu-hover)
+
+.cover-wrapper.dock .menu .list-h a:hover i,
+.cover-wrapper.dock .menu .list-h a:hover p,
+.cover-wrapper.dock .menu .list-h a.active i,
+.cover-wrapper.dock .menu .list-h a.active p
+  color: var(--tc-accent)
+
+.l_header .menu .menuitem,
+.l_header .title
+  color: var(--tc-heading)
+  white-space: nowrap
+
+.l_header .menu .menuitem
+  padding-left: 10px
+  padding-right: 10px
+
+.l_header .menu .menuitem i
+  margin-right: 4px
+
+.l_header .menu .menuitem:hover
+  background: var(--tc-accent-soft)
+  color: var(--tc-accent-strong)
+
+.widget,
+.post,
+.article,
+.white-box
+  border: 1px solid var(--tc-border)
+
+#l_side .toc-wrapper
+  color: var(--tc-text)
+  background: var(--tc-card-bg)
+  border: 1px solid var(--tc-card-border)
+  box-shadow: var(--tc-card-shadow)
+
+#l_side .toc-wrapper header
+  color: var(--tc-heading)
+  background: var(--tc-card-bg)
+  border-bottom: 1px solid var(--tc-card-border)
+
+#l_side .toc-wrapper a
+  color: var(--tc-muted)
+
+#l_side .toc-wrapper .content a.active,
+#l_side .toc-wrapper .toc-item.active > .toc-link
+  color: var(--tc-accent-strong)
+  border-left-color: var(--tc-accent)
+
+#l_side .toc-wrapper .content a:hover
+  color: var(--tc-accent-strong)
+  background: var(--tc-accent-soft)
+  border-left-color: var(--tc-accent)
+
+.article a,
+.md a
+  color: var(--tc-link)
+
+.article code
+  background: var(--tc-accent-soft)
+
+.docs-hub,
+.site-portal,
+.codex-guide-hero,
+.group-hero,
+.home-manifesto,
+.quickstart-hero
+  margin: 0 0 28px
+  padding: 26px
+  border-radius: 8px
+  color: var(--tc-text)
+  background: linear-gradient(135deg, var(--tc-panel-start), var(--tc-panel-end))
+  border: 1px solid var(--tc-panel-border)
+
+.site-portal,
+.codex-guide-hero
+  box-shadow: var(--tc-panel-shadow)
+
+.site-portal
+  display: grid
+  grid-template-columns: minmax(0, 1fr) auto
+  gap: 24px
+  align-items: center
+  border-color: var(--tc-border-strong)
+
+.group-hero
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))
+  gap: 24px
+  align-items: center
+  margin-bottom: 32px
+
+.docs-hub h2,
+.site-portal h2,
+.codex-guide-hero h2,
+.home-manifesto h2,
+.quickstart-hero h2
+  margin: 0 0 14px
+  color: var(--tc-heading)
+  font-size: 1.55rem
+  line-height: 1.35
+
+.codex-guide-hero
+  margin-bottom: 30px
+  padding: 28px
+
+.codex-guide-hero h2
+  font-size: 1.65rem
+
+.codex-guide-hero h2 span
+  display: block
+  margin-top: 6px
+
+.group-hero-copy h2
+  margin-top: 0
+  margin-bottom: 12px
+  color: var(--tc-heading)
+  font-size: 1.65rem
+
+.docs-hub p,
+.site-portal p,
+.codex-guide-hero p,
+.group-hero-copy p,
+.home-manifesto p,
+.quickstart-hero p
+  text-align: left
+
+.site-portal p
+  margin: 0
+  color: var(--tc-link)
+  font-size: 1.08rem
+  font-weight: 800
+  letter-spacing: 0
+  word-break: break-all
+
+.docs-hub-eyebrow,
+.codex-guide-eyebrow,
+.group-kicker,
+.home-eyebrow,
+.quickstart-eyebrow
+  display: inline-flex
+  margin: 0 0 12px
+  padding: 4px 10px
+  border-radius: 999px
+  color: var(--tc-accent-strong)
+  background: var(--tc-accent-soft)
+  font-size: .82rem
+  font-weight: 700
+
+.codex-guide-eyebrow
+  font-weight: 800
+
+.codex-guide-tags,
+.group-actions,
+.home-tags,
+.quickstart-tags
+  display: flex
+  flex-wrap: wrap
+  gap: 10px
+  margin-top: 18px
+
+.codex-guide-tags span,
+.group-actions span,
+.home-tags span,
+.quickstart-tags span
+  padding: 6px 12px
+  border-radius: 6px
+  color: var(--tc-chip-text)
+  background: var(--tc-chip-bg)
+  border: 1px solid var(--tc-chip-border)
+  font-size: .9rem
+
+.group-actions span
+  display: inline-flex
+  align-items: center
+  min-height: 32px
+
+.group-number
+  margin: 10px 0 16px
+  color: var(--tc-heading-soft)
+  font-size: 1.15rem
+
+.group-number strong
+  color: var(--tc-accent-strong)
+  font-size: 1.45rem
+  letter-spacing: .02em
+
+.group-qr-card
+  display: flex
+  justify-content: center
+
+.group-qr-card img
+  display: block
+  width: 100%
+  max-width: 280px
+  border-radius: 8px
+  box-shadow: var(--tc-panel-shadow)
+
+.docs-hub-grid,
+.quickstart-flow,
+.quickstart-cards,
+.codex-path-cards,
+.home-section-grid,
+.codex-prereq-grid,
+.codex-check-grid
+  display: grid
+  gap: 14px
+  margin: 18px 0 30px
+
+.docs-hub-grid,
+.home-section-grid
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr))
+
+.quickstart-flow,
+.codex-check-grid
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr))
+
+.quickstart-cards
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))
+  gap: 16px
+
+.codex-path-cards
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+  gap: 16px
+  align-items: stretch
+
+.codex-prereq-grid
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))
+  margin-bottom: 24px
+
+.docs-hub-card,
+.quickstart-card,
+.codex-path-card
+  display: block
+  padding: 20px
+  border-radius: 8px
+  color: var(--tc-text)
+  background: var(--tc-card-bg)
+  border: 1px solid var(--tc-card-border)
+  text-decoration: none
+  transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease
+
+.quickstart-card,
+.codex-path-card
+  padding: 22px
+
+.codex-path-card
+  display: flex
+  flex-direction: column
+  min-height: 100%
+
+.docs-hub-card:hover,
+.quickstart-card:hover,
+.codex-path-card:hover,
+.home-section-grid section:hover
+  transform: translateY(-4px)
+  border-color: var(--tc-card-border-hover)
+  background: var(--tc-card-hover)
+  box-shadow: var(--tc-card-shadow)
+
+.docs-hub-card span,
+.quickstart-card span,
+.codex-path-card span,
+.quickstart-flow span,
+.codex-step-copy span,
+.ai-time-item span
+  display: inline-flex
+  margin-bottom: 10px
+  color: var(--tc-link)
+  font-weight: 800
+  letter-spacing: 0
+
+.quickstart-card span,
+.codex-path-card span
+  margin-bottom: 12px
+  color: var(--tc-accent-strong)
+
+.codex-step-copy span
+  font-weight: 900
+
+.docs-hub-card h3,
+.quickstart-card h3,
+.codex-path-card h3,
+.home-section-grid h3
+  margin: 0 0 8px
+  color: var(--tc-heading)
+  font-size: 1.16rem
+
+.quickstart-card h3,
+.codex-path-card h3
+  margin-bottom: 10px
+  font-size: 1.18rem
+
+.docs-hub-card p,
+.quickstart-card p,
+.codex-path-card p,
+.home-section-grid p,
+.quickstart-flow p,
+.codex-prereq-grid p,
+.codex-note p,
+.codex-check-panel p,
+.ai-time-item p
+  margin: 0
+  text-align: left
+  color: var(--tc-text)
+  line-height: 1.65
+
+.docs-hub-card p
+  font-size: .98rem
+
+.quickstart-card p
+  margin-bottom: 16px
+
+.codex-path-card p
+  flex: 1
+  line-height: 1.7
+
+.quickstart-card strong
+  color: var(--tc-link)
+
+.codex-path-card strong,
+.site-portal-link
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  min-height: 38px
+  padding: 8px 14px
+  border-radius: 6px
+  color: var(--tc-button-text) !important
+  background: var(--tc-button-bg)
+  font-weight: 800
+  white-space: nowrap
+  box-shadow: 0 10px 22px var(--tc-accent-soft)
+
+.codex-path-card strong
+  width: max-content
+  margin-top: auto
+  align-self: flex-start
+
+.site-portal-link
+  gap: 8px
+  min-width: 144px
+  margin-top: 0
+  padding: 9px 16px
+  transition: transform .18s ease, background .18s ease, box-shadow .18s ease
+
+.site-portal-link:hover
+  transform: translateY(-2px)
+  color: var(--tc-button-text) !important
+  background: var(--tc-button-bg-hover)
+  box-shadow: 0 14px 28px var(--tc-accent-soft)
+
+.quickstart-flow section,
+.codex-prereq-grid section,
+.codex-check-grid section,
+.home-section-grid section,
+.ai-time-item
+  padding: 18px
+  border-radius: 8px
+  background: var(--tc-card-bg)
+  border: 1px solid var(--tc-card-border)
+
+.home-section-grid section
+  transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease
+
+.quickstart-flow strong,
+.codex-prereq-grid strong,
+.codex-check-grid strong,
+.ai-time-item strong
+  display: block
+  margin-bottom: 8px
+  color: var(--tc-heading)
+  font-size: 1.05rem
+
+.codex-route-line
+  display: block
+  margin: 14px 0
+  padding: 13px 16px
+  border-radius: 8px
+  color: var(--tc-route-text)
+  background: linear-gradient(135deg, var(--tc-route-start), var(--tc-route-end))
+  border: 1px solid var(--tc-route-border)
+  box-shadow: var(--tc-route-shadow)
+  font-weight: 900
+  line-height: 1.55
+  letter-spacing: 0
+
+.codex-note,
+.codex-check-panel
+  margin: 18px 0 30px
+  padding: 16px 18px
+  border-radius: 8px
+  background: var(--tc-accent-soft)
+  border: 1px solid var(--tc-accent-border)
+
+.codex-note strong
+  display: inline-flex
+  margin-bottom: 6px
+  color: var(--tc-accent-strong)
+
+.codex-branch-hint
+  display: grid
+  gap: 10px
+  margin: 12px 0 0
+  padding: 14px 16px
+  border-radius: 8px
+  background: var(--tc-card-bg)
+  border: 1px solid var(--tc-card-border)
+
+.codex-branch-hint strong
+  color: var(--tc-accent-strong)
+
+.codex-step-card
+  display: grid
+  grid-template-columns: minmax(260px, .9fr) minmax(320px, 1.25fr)
+  gap: 22px
+  align-items: start
+  margin: 18px 0 30px
+  padding: 22px
+  border-radius: 8px
+  background: var(--tc-card-bg)
+  border: 1px solid var(--tc-card-border)
+  box-shadow: var(--tc-card-shadow)
+
+.codex-step-copy,
+.codex-shot
+  min-width: 0
+
+.codex-step-copy h3
+  margin: 0 0 10px
+  color: var(--tc-heading)
+  font-size: 1.24rem
+  line-height: 1.35
+
+.codex-step-copy p
+  margin: 0 0 12px
+  text-align: left
+  line-height: 1.72
+
+.codex-step-copy code
+  word-break: break-all
+  white-space: normal
+
+.codex-shot
+  margin: 0
+
+.codex-shot img
+  display: block
+  width: 100%
+  border-radius: 8px
+  border: 1px solid var(--tc-image-border)
+  background: var(--tc-image-bg)
+  box-shadow: var(--tc-card-shadow)
+  cursor: zoom-in
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease
+
+.codex-shot img:hover,
+.codex-shot img:focus
+  transform: translateY(-2px)
+  border-color: var(--tc-card-border-hover)
+  box-shadow: var(--tc-panel-shadow)
+  outline: none
+
+.codex-shot figcaption
+  margin-top: 9px
+  color: var(--tc-muted)
+  font-size: .9rem
+  text-align: center
+
+body.codex-image-modal-open
+  overflow: hidden
+
+.codex-image-modal
+  position: fixed
+  inset: 0
+  z-index: 9999
+  display: none
+  align-items: center
+  justify-content: center
+  padding: 28px
+  background: var(--tc-modal-bg)
+  backdrop-filter: blur(10px)
+
+.codex-image-modal.is-open
+  display: flex
+
+.codex-image-modal-figure
+  position: relative
+  margin: 0
+  width: calc(100vw - 72px)
+  max-width: 1120px
+  max-height: calc(100vh - 84px)
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 12px
+
+.codex-image-modal-img
+  display: block
+  max-width: 100%
+  max-height: calc(100vh - 128px)
+  object-fit: contain
+  border-radius: 8px
+  border: 1px solid var(--tc-code-border)
+  background: var(--tc-code-bg)
+  box-shadow: 0 24px 70px rgba(0, 0, 0, .5)
+
+.codex-image-modal-caption
+  color: #e7eef2
+  font-size: .92rem
+  line-height: 1.55
+  text-align: center
+
+.codex-image-modal-close
+  position: fixed
+  top: 18px
+  right: 18px
+  width: 40px
+  height: 40px
+  border: 1px solid var(--tc-code-border)
+  border-radius: 50%
+  color: var(--tc-button-text)
+  background: var(--tc-button-bg)
+  font-size: 28px
+  line-height: 1
+  cursor: pointer
+  box-shadow: 0 12px 26px rgba(0, 0, 0, .28)
+
+.codex-image-modal-close:hover,
+.codex-image-modal-close:focus
+  background: var(--tc-button-bg-hover)
+  outline: none
+
+.codex-code-block
+  margin: 14px 0 0
+  max-width: 100%
+  border-radius: 8px
+  overflow: hidden
+  border: 1px solid var(--tc-code-border)
+  background: var(--tc-code-bg)
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06), var(--tc-card-shadow)
+  box-sizing: border-box
+
+.codex-code-block span
+  display: block
+  margin: 0
+  padding: 9px 12px
+  color: var(--tc-button-text)
+  background: var(--tc-button-bg)
+  font-size: .86rem
+  font-weight: 800
+
+.codex-code-block pre
+  margin: 0
+  padding: 14px
+  max-width: 100%
+  overflow-x: auto
+  background: var(--tc-code-bg) !important
+  box-sizing: border-box
+
+.codex-code-block code
+  color: var(--tc-code-text) !important
+  background: transparent !important
+  font-size: .88rem
+  line-height: 1.55
+  white-space: pre
+  text-shadow: none
+
+.codex-check-panel
+  padding: 22px
+
+.codex-check-panel h3
+  margin: 0 0 10px
+  color: var(--tc-heading)
+
+.codex-faq
+  display: grid
+  gap: 10px
+  margin: 18px 0 0
+
+.codex-faq details
+  border-radius: 8px
+  background: var(--tc-card-bg)
+  border: 1px solid var(--tc-card-border)
+  overflow: hidden
+
+.codex-faq summary
+  cursor: pointer
+  padding: 13px 16px
+  color: var(--tc-heading)
+  font-weight: 800
+
+.codex-faq details[open] summary
+  color: var(--tc-accent-strong)
+  background: var(--tc-accent-soft)
+
+.codex-faq p
+  margin: 0
+  padding: 0 16px 16px
+  text-align: left
+
+.ai-timeline
+  position: relative
+  margin: 18px 0 0
+  padding-left: 20px
+
+.ai-timeline:before
+  content: ''
+  position: absolute
+  left: 4px
+  top: 6px
+  bottom: 8px
+  width: 2px
+  background: linear-gradient(to bottom, var(--tc-accent), var(--tc-chip-border))
+
+.ai-time-item
+  position: relative
+  margin: 0 0 16px
+  padding: 14px 16px
+
+.ai-time-item:before
+  content: ''
+  position: absolute
+  left: -21px
+  top: 20px
+  width: 10px
+  height: 10px
+  border-radius: 50%
+  background: var(--tc-accent)
+  box-shadow: 0 0 0 4px var(--tc-accent-soft)
+
+.ai-time-item span
+  display: inline-block
+  min-width: 54px
+
+.ai-time-item p
+  margin-top: 8px
+  font-size: .95rem
+
+.ai-time-pending
+  background: var(--tc-accent-soft)
+  border-color: var(--tc-accent-border)
+
+.ai-time-pending span
+  color: var(--tc-accent-strong)
+  min-width: 88px
+
+.tc-site-catalog
+  display: none
+  position: fixed
+  top: 82px
+  z-index: 45
+  box-sizing: border-box
+  opacity: 1
+  visibility: visible
+  transform: none
+  color: var(--tc-text)
+  background: var(--tc-blur-bg)
+  border: 1px solid var(--tc-card-border)
+  border-radius: 8px
+  box-shadow: var(--tc-card-shadow)
+  backdrop-filter: saturate(150%) blur(18px)
+
+.tc-site-catalog.is-over-cover
+  opacity: 0
+  pointer-events: none
+  transform: translateX(-8px)
+
+.tc-site-catalog *,
+.tc-site-catalog *:before,
+.tc-site-catalog *:after
+  box-sizing: border-box
+
+.tc-site-catalog__toggle
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 8px
+  width: 100%
+  min-height: 42px
+  margin: 0
+  padding: 0 13px
+  color: var(--tc-heading)
+  background: transparent
+  border: 0
+  border-bottom: 1px solid var(--tc-card-border)
+  cursor: pointer
+  font-family: inherit
+  font-size: .92rem
+  font-weight: 800
+  line-height: 1
+  white-space: nowrap
+  transition: color .18s ease, background .18s ease
+
+.tc-site-catalog__toggle i
+  width: 16px
+  color: var(--tc-accent-strong)
+  text-align: center
+
+.tc-site-catalog__toggle:hover,
+.tc-site-catalog__toggle:focus
+  color: var(--tc-accent-strong)
+  background: var(--tc-accent-soft)
+  outline: none
+
+.tc-site-catalog__toggle:focus-visible
+  box-shadow: inset 0 0 0 2px var(--tc-accent-border)
+
+.tc-site-catalog:before
+  display: none
+
+.tc-site-catalog__body
+  max-height: calc(100vh - 142px)
+  padding: 8px
+  overflow: auto
+  scrollbar-width: thin
+
+.tc-site-catalog__actions
+  margin: 0 0 8px
+  padding: 0 0 8px
+  border-bottom: 1px solid var(--tc-card-border)
+
+.tc-site-catalog__back
+  display: flex
+  align-items: center
+  gap: 8px
+  width: 100%
+  min-height: 34px
+  margin: 0
+  padding: 7px 9px
+  color: var(--tc-heading-soft)
+  background: var(--tc-accent-soft)
+  border: 1px solid var(--tc-accent-border)
+  border-radius: 7px
+  cursor: pointer
+  font-family: inherit
+  font-size: .84rem
+  font-weight: 800
+  line-height: 1.2
+  text-align: left
+  transition: color .18s ease, background .18s ease, border-color .18s ease
+
+.tc-site-catalog__back i
+  width: 16px
+  color: var(--tc-accent-strong)
+  text-align: center
+
+.tc-site-catalog__back:hover,
+.tc-site-catalog__back:focus
+  color: var(--tc-accent-strong)
+  background: rgba(15, 143, 138, .14)
+  border-color: var(--tc-accent)
+  outline: none
+
+.tc-site-catalog__list
+  list-style: none
+  margin: 0
+  padding: 0
+
+.tc-site-catalog__list--l2
+  margin: 2px 0 7px
+  padding-left: 10px
+  border-left: 1px solid var(--tc-card-border)
+
+.tc-site-catalog__list--l3
+  margin: 2px 0 5px
+  padding-left: 12px
+  border-left: 1px solid var(--tc-border)
+
+.tc-site-catalog__item
+  margin: 0
+  padding: 0
+
+.tc-site-catalog__link
+  position: relative
+  display: flex
+  align-items: center
+  width: 100%
+  margin: 0
+  min-height: 28px
+  padding: 5px 8px
+  color: var(--tc-muted)
+  background: transparent
+  border: 0
+  border-radius: 7px
+  cursor: pointer
+  font-family: inherit
+  line-height: 1.35
+  text-decoration: none
+  text-align: left
+  transition: color .18s ease, background .18s ease
+
+.tc-site-catalog__link span
+  min-width: 0
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+
+.tc-site-catalog__branch
+  justify-content: space-between
+
+.tc-site-catalog__branch:after
+  content: '\f105'
+  flex: 0 0 auto
+  margin-left: 8px
+  color: var(--tc-muted)
+  font-family: 'Font Awesome 6 Free'
+  font-size: .72rem
+  font-weight: 900
+  line-height: 1
+  transition: transform .16s ease, color .16s ease
+
+.tc-site-catalog__item.is-open > .tc-site-catalog__branch:after
+  color: var(--tc-accent-strong)
+  transform: rotate(90deg)
+
+.tc-site-catalog__link--l1
+  color: var(--tc-heading-soft)
+  font-size: .9rem
+  font-weight: 800
+
+.tc-site-catalog__link--l2
+  font-size: .84rem
+  font-weight: 700
+
+.tc-site-catalog__link--l3
+  min-height: 26px
+  padding-left: 10px
+  color: var(--tc-muted)
+  font-size: .8rem
+  font-weight: 600
+
+.tc-site-catalog__link--l3:before
+  content: ''
+  position: absolute
+  left: -13px
+  top: 50%
+  width: 7px
+  height: 1px
+  background: var(--tc-card-border)
+
+.tc-site-catalog__link:hover,
+.tc-site-catalog__link:focus
+  color: var(--tc-accent-strong)
+  background: var(--tc-accent-soft)
+  outline: none
+
+.tc-site-catalog__link.is-active
+  color: var(--tc-accent-strong)
+
+.tc-site-catalog__link.is-current
+  color: var(--tc-accent-strong)
+  background: var(--tc-accent-soft)
+  box-shadow: inset 3px 0 0 var(--tc-accent)
+
+.tc-site-catalog__item > .tc-site-catalog__list
+  display: none
+
+.tc-site-catalog__item.is-open > .tc-site-catalog__list
+  display: block
+
+[color-scheme='light'] .tc-site-catalog,
+[color-scheme='light'] #l_side .toc-wrapper
+  color: #334653
+  background: rgba(255, 255, 255, .9)
+  border-color: rgba(20, 58, 76, .12)
+
+[color-scheme='light'] .tc-site-catalog__link:hover,
+[color-scheme='light'] .tc-site-catalog__link:focus,
+[color-scheme='light'] .tc-site-catalog__link.is-active,
+[color-scheme='light'] .tc-site-catalog__link.is-current,
+[color-scheme='light'] #l_side .toc-wrapper .content a.active,
+[color-scheme='light'] #l_side .toc-wrapper .toc-item.active > .toc-link,
+[color-scheme='light'] #l_side .toc-wrapper .content a:hover
+  color: #087f7a
+
+[color-scheme='light'] .tc-site-catalog__link:hover,
+[color-scheme='light'] .tc-site-catalog__link:focus,
+[color-scheme='light'] .tc-site-catalog__link.is-current,
+[color-scheme='light'] #l_side .toc-wrapper .content a:hover
+  background: rgba(15, 143, 138, .1)
+
+[color-scheme='dark'] .tc-site-catalog,
+[color-scheme='dark'] #l_side .toc-wrapper
+  color: #d7e3e9
+  background: rgba(36, 49, 59, .86)
+  border-color: rgba(126, 231, 219, .16)
+
+[color-scheme='dark'] .tc-site-catalog__link:hover,
+[color-scheme='dark'] .tc-site-catalog__link:focus,
+[color-scheme='dark'] .tc-site-catalog__link.is-active,
+[color-scheme='dark'] .tc-site-catalog__link.is-current,
+[color-scheme='dark'] #l_side .toc-wrapper .content a.active,
+[color-scheme='dark'] #l_side .toc-wrapper .toc-item.active > .toc-link,
+[color-scheme='dark'] #l_side .toc-wrapper .content a:hover
+  color: #58d5c9
+
+[color-scheme='dark'] .tc-site-catalog__link:hover,
+[color-scheme='dark'] .tc-site-catalog__link:focus,
+[color-scheme='dark'] .tc-site-catalog__link.is-current,
+[color-scheme='dark'] #l_side .toc-wrapper .content a:hover
+  background: rgba(126, 231, 219, .1)
+
+@media screen and (min-width: 1200px)
+  .tc-site-catalog
+    display: block
+    left: 12px
+    width: 44px
+    max-height: calc(100vh - 102px)
+    overflow: hidden
+    transition: width .2s ease, box-shadow .2s ease, opacity .18s ease, transform .18s ease
+
+  .tc-site-catalog:before
+    content: '目录'
+    position: absolute
+    left: 0
+    top: 48px
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 44px
+    color: var(--tc-muted)
+    font-size: .78rem
+    font-weight: 800
+    letter-spacing: 0
+    writing-mode: vertical-rl
+    transition: opacity .16s ease
+
+  .tc-site-catalog:hover,
+  .tc-site-catalog:focus-within
+    width: 232px
+    overflow: visible
+
+  .tc-site-catalog:hover:before,
+  .tc-site-catalog:focus-within:before
+    opacity: 0
+
+  .tc-site-catalog__head
+    justify-content: center
+    padding: 0
+
+  .tc-site-catalog:hover .tc-site-catalog__head,
+  .tc-site-catalog:focus-within .tc-site-catalog__head
+    justify-content: flex-start
+    padding: 0 13px
+
+  .tc-site-catalog__head span,
+  .tc-site-catalog__body
+    opacity: 0
+    pointer-events: none
+    transition: opacity .16s ease
+
+  .tc-site-catalog:hover .tc-site-catalog__head span,
+  .tc-site-catalog:focus-within .tc-site-catalog__head span,
+  .tc-site-catalog:hover .tc-site-catalog__body,
+  .tc-site-catalog:focus-within .tc-site-catalog__body
+    opacity: 1
+    pointer-events: auto
+
+@media screen and (min-width: 1580px)
+  .tc-site-catalog
+    left: calc((100vw - 1080px) / 2 - 252px)
+    width: 232px
+    overflow: visible
+
+  .tc-site-catalog:before
+    display: none
+
+  .tc-site-catalog__head
+    justify-content: flex-start
+    padding: 0 13px
+
+  .tc-site-catalog__head span,
+  .tc-site-catalog__body
+    opacity: 1
+    pointer-events: auto
+
+@media screen and (max-height: 680px) and (min-width: 1200px)
+  .tc-site-catalog
+    top: 70px
+
+  .tc-site-catalog__body
+    max-height: calc(100vh - 118px)
+
+@media screen and (min-width: 1200px)
+  .tc-site-catalog
+    left: 0
+    width: 48px
+    max-height: calc(100vh - 102px)
+    overflow: hidden
+    border-left: 0
+    border-radius: 0 8px 8px 0
+    transition: width .22s ease, box-shadow .2s ease, opacity .18s ease, transform .18s ease
+
+  .tc-site-catalog:hover,
+  .tc-site-catalog:focus-within
+    width: 48px
+    overflow: hidden
+
+  .tc-site-catalog.is-expanded,
+  .tc-site-catalog.is-expanded:hover,
+  .tc-site-catalog.is-expanded:focus-within
+    width: 260px
+    overflow: hidden
+    box-shadow: 0 16px 44px rgba(12, 22, 28, .2)
+
+  .tc-site-catalog:before,
+  .tc-site-catalog:hover:before,
+  .tc-site-catalog:focus-within:before
+    display: none
+    opacity: 0
+
+  .tc-site-catalog__toggle
+    justify-content: center
+    gap: 0
+    min-height: 48px
+    padding: 0
+
+  .tc-site-catalog.is-expanded .tc-site-catalog__toggle
+    justify-content: flex-start
+    gap: 8px
+    padding: 0 13px
+
+  .tc-site-catalog__toggle span
+    max-width: 0
+    opacity: 0
+    overflow: hidden
+    pointer-events: none
+    transition: max-width .18s ease, opacity .16s ease
+
+  .tc-site-catalog__body
+    display: none
+    opacity: 0
+    pointer-events: none
+
+  .tc-site-catalog.is-expanded .tc-site-catalog__toggle span
+    max-width: 120px
+    opacity: 1
+    pointer-events: auto
+
+  .tc-site-catalog.is-expanded .tc-site-catalog__body
+    display: block
+    opacity: 1
+    pointer-events: auto
+
+@media screen and (min-width: 1580px)
+  .tc-site-catalog
+    left: 0
+    width: 48px
+    overflow: hidden
+
+  .tc-site-catalog.is-expanded,
+  .tc-site-catalog.is-expanded:hover,
+  .tc-site-catalog.is-expanded:focus-within
+    width: 260px
+
+.tc-site-catalog.is-over-cover
+  opacity: 0 !important
+  visibility: hidden
+  pointer-events: none
+  transform: translateX(-8px) !important
+
+@media screen and (max-width: 500px)
+  .cover-wrapper .cover-body .title
+    transform: scaleX(1.04)
+
+  .cover-wrapper .cover-body .subtitle
+    font-size: .875rem
+
+@media screen and (max-width: 768px)
+  .docs-hub,
+  .site-portal,
+  .codex-guide-hero,
+  .group-hero,
+  .home-manifesto,
+  .quickstart-hero
+    padding: 20px
+
+  .group-qr-card img
+    max-width: 240px
+
+  .site-portal
+    grid-template-columns: 1fr !important
+    gap: 16px
+
+  .docs-hub h2,
+  .site-portal h2,
+  .home-manifesto h2,
+  .quickstart-hero h2
+    font-size: 1.25rem
+
+  .codex-guide-hero h2
+    font-size: 1.28rem
+
+  .site-portal-link
+    width: 100%
+
+  .codex-step-card
+    grid-template-columns: 1fr
+    padding: 18px
+
+  .codex-step-copy h3
+    font-size: 1.12rem
+
+  .codex-code-block code
+    font-size: .82rem
+    white-space: pre-wrap
+    word-break: break-all
+
+  .codex-code-block pre
+    padding: 10px
+
+  .codex-image-modal
+    padding: 14px
+
+  .codex-image-modal-figure
+    max-width: calc(100vw - 28px)
+    max-height: calc(100vh - 58px)
+
+  .codex-image-modal-img
+    max-height: calc(100vh - 104px)
+
+  .codex-image-modal-close
+    top: 12px
+    right: 12px
+    width: 36px
+    height: 36px
+    font-size: 24px

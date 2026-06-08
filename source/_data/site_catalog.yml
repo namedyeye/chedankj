@@ -1,0 +1,85 @@
+- title: 快速上手
+  path: quickstart/
+  children:
+    - title: 快速上手总览
+      children:
+        - title: 快速上手
+          path: quickstart/
+    - title: Agent 工具安装
+      children:
+        - title: Codex 安装配置教程
+          path: quickstart/codex/
+        - title: Claude Code 安装配置教程
+          path: quickstart/claude-code/
+    - title: Codex 配置路径
+      children:
+        - title: Codex 安装配置教程
+          path: quickstart/codex/
+        - title: 第一次安装使用 Codex
+          path: quickstart/codex/manual/
+        - title: 使用 CC Switch 接入 Codex
+          path: quickstart/codex/ccswitch/
+
+- title: 文档
+  path: docs/
+  children:
+    - title: 文档中心
+      children:
+        - title: 文档
+          path: docs/
+    - title: 专题文档
+      children:
+        - title: Agent 配置
+          path: docs/agent-config/
+        - title: 工具使用
+          path: docs/tooling/
+
+- title: 技巧教学
+  path: tutorials/
+  children:
+    - title: 方法教程
+      children:
+        - title: 技巧教学
+          path: tutorials/
+
+- title: 配置问题
+  path: config-issues/
+  children:
+    - title: 配置排查
+      children:
+        - title: 配置问题
+          path: config-issues/
+
+- title: 示例
+  path: examples/
+  children:
+    - title: 案例示例
+      children:
+        - title: 示例
+          path: examples/
+        - title: 工作流案例
+          path: examples/workflow/
+
+- title: 博客
+  path: 2026/06/05/hello-world/
+  children:
+    - title: 建站记录
+      children:
+        - title: TechChedan 博客初始化记录
+          path: 2026/06/05/hello-world/
+
+- title: 站点与交流
+  path: site/
+  children:
+    - title: 站点信息
+      children:
+        - title: 站点
+          path: site/
+        - title: 关于
+          path: about/
+    - title: 交流支持
+      children:
+        - title: 群组
+          path: groups/
+        - title: 帮助
+          path: help/

@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: namedyeye 的博客
-subtitle: ''
-description: 记录技术、学习和生活的个人博客
-keywords:
-author: namedyeye
+title: TechChedan
+subtitle: AI 技术分享与问题解决手册
+description: 面向 Agent 配置、AI 工具使用技巧和技术方案实践的知识导航站
+keywords: AI,Agent,Codex,技术方案,工具使用,Hexo
+author: TechChedan
 language: zh-CN
 timezone: Asia/Shanghai
 

@@ -4,62 +4,77 @@ navbar:
   visiable: auto
   logo:
     img:
-    icon: fa-solid fa-blog
-    title: namedyeye
+    icon: fa-solid fa-robot
+    title: TechChedan
   menu:
-    - name: 首页
-      icon: fa-solid fa-house
-      url: /
-    - name: 分类
-      icon: fa-solid fa-folder-open
-      url: categories/
-    - name: 标签
-      icon: fa-solid fa-tags
-      url: tags/
-    - name: 归档
-      icon: fa-solid fa-box-archive
-      url: archives/
-    - name: 关于
-      icon: fa-solid fa-circle-info
-      url: about/
-  search: 搜索文章
+    - name: 快速上手
+      icon: fa-solid fa-bolt
+      url: quickstart/
+    - name: 文档
+      icon: fa-solid fa-book-open
+      url: docs/
+    - name: 技巧教学
+      icon: fa-solid fa-graduation-cap
+      url: tutorials/
+    - name: 配置问题
+      icon: fa-solid fa-sliders
+      url: config-issues/
+    - name: 群组
+      icon: fa-solid fa-users
+      url: groups/
+    - name: 站点
+      icon: fa-solid fa-sitemap
+      url: site/
+    - name: 暗色
+      icon: fa-solid fa-moon
+      toggle: darkmode
+  search: 搜索文档、上手流程、技巧、配置问题
 
 cover:
-  height_scheme: half
+  height_scheme: full
   layout_scheme: dock
   display:
     home: true
     archive: true
     others: false
-  background: https://gcore.jsdelivr.net/gh/MHG-LAB/cron@gh-pages/bing/bing.jpg
+  background: /chedankj/images/bikini-bottom-fish-cover.png
   logo:
-  title: namedyeye 的博客
-  subtitle: Agent 使用技巧与技术记录
-  search: 搜索文章
+  title: "CD'Blog"
+  subtitle: "AI 技术分享&问题解决&应用案例"
+  search: 搜索快速上手、技巧教学、配置问题
   features:
-    - name: 文章
-      icon: fa-solid fa-rss
+    - name: 快速上手
+      icon: fa-solid fa-bolt
       img:
-      url: /
-    - name: 分类
-      icon: fa-solid fa-folder-open
+      url: quickstart/
+    - name: 文档
+      icon: fa-solid fa-book-open
       img:
-      url: categories/
-    - name: 标签
-      icon: fa-solid fa-tags
+      url: docs/
+    - name: 技巧教学
+      icon: fa-solid fa-graduation-cap
       img:
-      url: tags/
-    - name: 关于
-      icon: fa-solid fa-circle-info
+      url: tutorials/
+    - name: 配置问题
+      icon: fa-solid fa-sliders
       img:
-      url: about/
+      url: config-issues/
+    - name: 群组
+      icon: fa-solid fa-users
+      img:
+      url: groups/
+    - name: 站点
+      icon: fa-solid fa-sitemap
+      img:
+      url: site/
 
 article:
   preview:
     scheme: landscape
-    auto_excerpt: true
+    auto_excerpt: false
     hide_excerpt: false
     author: false
+    readmore: auto
   body:
     top_meta: [category, date]
     bottom_meta: [updated, tags]
@@ -74,34 +89,79 @@ article:
         enable: false
     meta_library:
       author:
-        name: namedyeye
+        name: TechChedan
         url: /
 
 comments:
   service: false
 
 sidebar:
-  for_page: [blogger, category, tagcloud, webinfo]
-  for_post: [toc]
+  for_page: [quick_access, category, tagcloud, webinfo]
+  for_post: [toc, quick_access]
   widget_library:
+    quick_access:
+      class: grid
+      display: [desktop, mobile]
+      header:
+        icon: fa-solid fa-compass
+        title: 快速入口
+      fixed: true
+      rows:
+        - name: 上手
+          icon: fa-solid fa-bolt
+          url: quickstart/
+        - name: 文档
+          icon: fa-solid fa-book-open
+          url: docs/
+        - name: 技巧
+          icon: fa-solid fa-graduation-cap
+          url: tutorials/
+        - name: 配置
+          icon: fa-solid fa-sliders
+          url: config-issues/
+        - name: 群组
+          icon: fa-solid fa-users
+          url: groups/
+        - name: 站点
+          icon: fa-solid fa-sitemap
+          url: site/
     blogger:
       class: blogger
       display: [desktop, mobile]
       avatar:
       shape: rectangle
-      title: namedyeye
-      subtitle: Agent 使用技巧与技术记录
+      url: about/
+      title: TechChedan
+      subtitle: AI 技术分享与问题解决手册
       jinrishici: false
       social:
         - icon: fa-brands fa-github
           url: https://github.com/namedyeye
     category:
+      class: category
+      display: [desktop]
       header:
-        url: /chedankj/categories/
+        icon: fa-solid fa-folder-open
+        title: 文章分类
+        url: categories/
     tagcloud:
+      class: tagcloud
+      display: [desktop, mobile]
       header:
-        url: /chedankj/tags/
+        icon: fa-solid fa-tags
+        title: 热门标签
+        url: tags/
+      min_font: 14
+      max_font: 24
+      color: true
+      start_color: '#999'
+      end_color: '#555'
     webinfo:
+      class: webinfo
+      display: [desktop]
+      header:
+        icon: fa-solid fa-award
+        title: 站点信息
       type:
         article:
           enable: true
@@ -120,7 +180,7 @@ site_footer:
     - icon: fa-brands fa-github
       url: https://github.com/namedyeye
   source: https://github.com/namedyeye/chedankj/
-  copyright: "[Copyright](/) © namedyeye"
+  copyright: "[Copyright](/) © TechChedan"
 
 plugins:
   sitesjs:
@@ -129,6 +189,59 @@ plugins:
     enable: false
   contributorsjs:
     enable: false
+  darkmode:
+    enable: true
+
+color_scheme:
+  common:
+    theme: '#0f8f8a'
+    link: '#096f91'
+    button: '#0f8f8a'
+    hover: '#0b7471'
+    inner: '#f7fbfc'
+    selection: 'alpha(#0f8f8a, 0.22)'
+  light:
+    site_bg: '#edf4f7'
+    site_inner: '#f7fbfc'
+    site_footer: '#6f7f8a'
+    card: '#ffffff'
+    text: '#273642'
+    block: '#f1f7f9'
+    codeblock: '#e8f1f4'
+    inlinecode: '#086f6d'
+    h1: '#142638'
+    h2: '#1b3042'
+    h3: '#243b4f'
+    h4: '#2f4658'
+    h5: '#435967'
+    h6: '#596b76'
+    p: '#334653'
+    list: '#3f5362'
+    list_hl: '#087f7a'
+    meta: '#6b7c87'
+    copyright_bkg: '#e7f0f3'
+  dark:
+    site_bd: '#151d24'
+    site_bg: '#1c2730'
+    card: '#24313b'
+    site_inner: '#eef7fb'
+    site_footer: '#9fb0bc'
+    text: '#e7eef2'
+    block: '#2e3d48'
+    codeblock: '#1a242c'
+    inlinecode: '#7ee7db'
+    h1: '#f4fbff'
+    h2: '#eef7fb'
+    h3: '#d9e8ee'
+    h4: '#c9d8df'
+    h5: '#b9c9d1'
+    h6: '#a9bac3'
+    p: '#d7e3e9'
+    list: '#d2e0e7'
+    list_hl: '#85f0e4'
+    meta: '#a6b8c3'
+    copyright_bkg: '#202c35'
+    brightness: 86%
 
 search:
   enable: true

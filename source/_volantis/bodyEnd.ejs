@@ -1,0 +1,162 @@
+<script>
+  (function () {
+    function removeBrokenSidebarTocItems() {
+      document.querySelectorAll('#l_side .toc .toc-link:not([href]):not([toc-action])').forEach(function (link) {
+        var item = link.closest('.toc-item');
+        if (item) item.remove();
+      });
+    }
+
+    removeBrokenSidebarTocItems();
+
+    if (typeof window.listenSidebarTOC === 'function') {
+      var originalListenSidebarTOC = window.listenSidebarTOC;
+      window.listenSidebarTOC = function () {
+        removeBrokenSidebarTocItems();
+        try {
+          originalListenSidebarTOC();
+        } catch (error) {
+          removeBrokenSidebarTocItems();
+          if (window.console && console.warn) console.warn('Skipped broken sidebar TOC item.', error);
+        }
+      };
+      if (window.volantis && volantis.pjax && volantis.pjax.push) {
+        volantis.pjax.push(window.listenSidebarTOC, 'listenSidebarTOC');
+      }
+    }
+
+    function normalizeCatalogPath(value) {
+      try {
+        value = new URL(value, window.location.origin).pathname;
+      } catch (error) {}
+      return String(value || '/')
+        .replace(/\/index\.html$/, '/')
+        .replace(/\/?$/, '/');
+    }
+
+    function refreshSiteCatalog() {
+      var catalog = document.querySelector('.tc-site-catalog');
+      if (!catalog) return;
+
+      var current = normalizeCatalogPath(window.location.pathname);
+      catalog.querySelectorAll('.is-current, .is-active, .is-open').forEach(function (node) {
+        node.classList.remove('is-current', 'is-active', 'is-open');
+      });
+      catalog.querySelectorAll('.tc-site-catalog__branch').forEach(function (branch) {
+        branch.setAttribute('aria-expanded', 'false');
+      });
+
+      catalog.querySelectorAll('a[href]').forEach(function (link) {
+        if (normalizeCatalogPath(link.href) !== current) return;
+
+        var item = link.closest('.tc-site-catalog__item');
+        var isLeaf = item && !item.querySelector(':scope > .tc-site-catalog__list');
+        link.classList.add('is-active');
+        if (isLeaf) link.classList.add('is-current');
+        while (item) {
+          item.classList.add('is-open');
+          var parentLink = item.querySelector(':scope > .tc-site-catalog__link');
+          if (parentLink) parentLink.classList.add('is-active');
+          var branch = item.querySelector(':scope > .tc-site-catalog__branch');
+          if (branch) branch.setAttribute('aria-expanded', 'true');
+          item = item.parentElement && item.parentElement.closest('.tc-site-catalog__item');
+        }
+      });
+    }
+
+    function syncSiteCatalogCoverState() {
+      var catalog = document.querySelector('.tc-site-catalog');
+      if (!catalog) return;
+
+      var cover = document.querySelector('#l_cover .cover-wrapper');
+      var coverBottom = cover ? cover.getBoundingClientRect().bottom : 0;
+      var hideForCover = cover && cover.offsetHeight > 160 && coverBottom > 92;
+      catalog.classList.toggle('is-over-cover', !!hideForCover);
+      if (hideForCover) {
+        catalog.style.setProperty('opacity', '0', 'important');
+        catalog.style.setProperty('visibility', 'hidden', 'important');
+        catalog.style.setProperty('pointer-events', 'none', 'important');
+        catalog.style.setProperty('transform', 'translateX(-8px)', 'important');
+      } else {
+        catalog.style.setProperty('opacity', '1', 'important');
+        catalog.style.setProperty('visibility', 'visible', 'important');
+        catalog.style.setProperty('pointer-events', 'auto', 'important');
+        catalog.style.setProperty('transform', 'none', 'important');
+      }
+    }
+
+    function requestSiteCatalogCoverSync() {
+      syncSiteCatalogCoverState();
+      window.requestAnimationFrame(syncSiteCatalogCoverState);
+    }
+
+    function setSiteCatalogExpanded(catalog, expanded) {
+      if (!catalog) return;
+      var toggle = catalog.querySelector('.tc-site-catalog__toggle');
+      catalog.classList.toggle('is-expanded', expanded);
+      if (toggle) toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    }
+
+    function goSiteCatalogBack() {
+      if (window.history && window.history.length > 1) {
+        window.history.back();
+        return;
+      }
+      window.location.href = '/chedankj/';
+    }
+
+    function bindSiteCatalogToggle() {
+      var catalog = document.querySelector('.tc-site-catalog');
+      if (!catalog || catalog.dataset.toggleBound === 'true') return;
+
+      var toggle = catalog.querySelector('.tc-site-catalog__toggle');
+      if (!toggle) return;
+      var back = catalog.querySelector('.tc-site-catalog__back');
+
+      toggle.addEventListener('click', function () {
+        setSiteCatalogExpanded(catalog, !catalog.classList.contains('is-expanded'));
+      });
+      if (back) {
+        back.addEventListener('click', goSiteCatalogBack);
+      }
+      catalog.querySelectorAll('.tc-site-catalog__branch').forEach(function (branch) {
+        branch.addEventListener('click', function () {
+          var item = branch.closest('.tc-site-catalog__item');
+          if (!item) return;
+          var expanded = !item.classList.contains('is-open');
+          item.classList.toggle('is-open', expanded);
+          branch.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        });
+      });
+      catalog.querySelectorAll('a[href]').forEach(function (link) {
+        link.addEventListener('click', function () {
+          setSiteCatalogExpanded(catalog, false);
+        });
+      });
+      catalog.dataset.toggleBound = 'true';
+      setSiteCatalogExpanded(catalog, false);
+    }
+
+    function refreshSiteCatalogAll() {
+      removeBrokenSidebarTocItems();
+      bindSiteCatalogToggle();
+      refreshSiteCatalog();
+      requestSiteCatalogCoverSync();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', refreshSiteCatalogAll);
+    } else {
+      refreshSiteCatalogAll();
+    }
+    window.addEventListener('scroll', requestSiteCatalogCoverSync, { passive: true });
+    window.addEventListener('resize', requestSiteCatalogCoverSync);
+    window.addEventListener('load', requestSiteCatalogCoverSync);
+    document.addEventListener('pjax:complete', refreshSiteCatalogAll);
+    if (window.volantis && volantis.pjax && volantis.pjax.push) {
+      volantis.pjax.push(refreshSiteCatalogAll, 'refreshSiteCatalog');
+    }
+    window.setTimeout(requestSiteCatalogCoverSync, 250);
+    window.setTimeout(requestSiteCatalogCoverSync, 1000);
+  })();
+</script>
