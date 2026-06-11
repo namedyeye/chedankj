@@ -257,12 +257,31 @@ body
 .codex-guide-hero
   box-shadow: var(--tc-panel-shadow)
 
+.site-portal-grid
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))
+  gap: 18px
+  margin: 0 0 28px
+
 .site-portal
   display: grid
   grid-template-columns: minmax(0, 1fr) auto
   gap: 24px
   align-items: center
   border-color: var(--tc-border-strong)
+
+.site-portal--tools
+  background: var(--tc-article-link-bg)
+  border-color: var(--tc-article-link-border)
+
+.site-portal-grid .site-portal
+  margin: 0
+
+.site-portal-copy span
+  display: block
+  margin-top: 10px
+  color: var(--tc-muted)
+  line-height: 1.7
 
 .group-hero
   display: grid
@@ -273,6 +292,7 @@ body
 
 .docs-hub h2,
 .site-portal h2,
+.site-portal-title,
 .codex-guide-hero h2,
 .home-manifesto h2,
 .quickstart-hero h2
@@ -1411,8 +1431,13 @@ body.codex-image-modal-open
     grid-template-columns: 1fr !important
     gap: 16px
 
+  .site-portal-grid
+    grid-template-columns: 1fr
+    gap: 14px
+
   .docs-hub h2,
   .site-portal h2,
+  .site-portal-title,
   .home-manifesto h2,
   .quickstart-hero h2
     font-size: 1.25rem
