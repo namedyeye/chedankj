@@ -64,6 +64,21 @@
       });
     }
 
+    function refreshLatestArticleBadges() {
+      var newWindow = 7 * 24 * 60 * 60 * 1000;
+      var now = Date.now();
+      document.querySelectorAll('.home-latest-card[data-published]').forEach(function (card) {
+        var published = Date.parse(card.getAttribute('data-published'));
+        var isNew = !Number.isNaN(published) && now >= published && now - published <= newWindow;
+        var badge = card.querySelector('.home-latest-card__badge');
+        card.classList.toggle('is-new', isNew);
+        if (badge) {
+          badge.hidden = !isNew;
+          badge.setAttribute('aria-hidden', isNew ? 'false' : 'true');
+        }
+      });
+    }
+
     function syncSiteCatalogCoverState() {
       var catalog = document.querySelector('.tc-site-catalog');
       if (!catalog) return;
@@ -141,6 +156,7 @@
       removeBrokenSidebarTocItems();
       bindSiteCatalogToggle();
       refreshSiteCatalog();
+      refreshLatestArticleBadges();
       requestSiteCatalogCoverSync();
     }
 

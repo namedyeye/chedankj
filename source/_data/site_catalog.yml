@@ -34,13 +34,15 @@
         - title: 工具使用
           path: docs/tooling/
 
-- title: 技巧教学
+- title: 技巧
   path: tutorials/
   children:
     - title: 方法教程
       children:
-        - title: 技巧教学
+        - title: 技巧
           path: tutorials/
+        - title: 如何在 Codex 使用 Image2
+          path: tutorials/image2-codex/
 
 - title: 配置问题
   path: config-issues/

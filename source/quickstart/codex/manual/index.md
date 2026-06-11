@@ -3,6 +3,9 @@ title: 第一次安装使用 Codex
 layout: page
 date: 2026-06-08 10:00:00
 cover: true
+home_latest: true
+home_label: 安装配置
+home_excerpt: 从安装 Codex、创建中转密钥，到写入 auth.json 和 config.toml，完成首次接入和重启验证。
 ---
 
 <div class="codex-guide-hero">

@@ -20,6 +20,10 @@ tc_light_vars()
   --tc-card-border: rgba(20, 58, 76, .12)
   --tc-card-border-hover: rgba(15, 143, 138, .28)
   --tc-card-shadow: 0 14px 30px rgba(20, 44, 57, .09)
+  --tc-article-link-bg: linear-gradient(135deg, rgba(255, 255, 255, .99), rgba(237, 255, 252, .98))
+  --tc-article-link-hover: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(226, 250, 246, .98))
+  --tc-article-link-border: rgba(15, 143, 138, .3)
+  --tc-article-link-shadow: 0 16px 34px rgba(15, 98, 112, .11)
   --tc-text: #334653
   --tc-heading: #142638
   --tc-heading-soft: #203746
@@ -69,6 +73,10 @@ tc_dark_vars()
   --tc-card-border: rgba(126, 231, 219, .16)
   --tc-card-border-hover: rgba(126, 231, 219, .32)
   --tc-card-shadow: 0 14px 30px rgba(0, 0, 0, .2)
+  --tc-article-link-bg: linear-gradient(135deg, rgba(42, 60, 72, .94), rgba(36, 68, 70, .9))
+  --tc-article-link-hover: linear-gradient(135deg, rgba(50, 72, 84, .96), rgba(42, 82, 84, .92))
+  --tc-article-link-border: rgba(126, 231, 219, .34)
+  --tc-article-link-shadow: 0 16px 34px rgba(0, 0, 0, .22)
   --tc-text: #d7e3e9
   --tc-heading: #f4fbff
   --tc-heading-soft: #eef7fb
@@ -138,6 +146,9 @@ body
   letter-spacing: 0
   transform: scaleX(1.08)
   transform-origin: center
+
+#l_cover .cover-wrapper#full .cover-body .top
+  transform: translateY(-36px)
 
 .cover-wrapper .cover-body .subtitle
   font-size: .95rem
@@ -370,6 +381,7 @@ body
 .quickstart-flow,
 .quickstart-cards,
 .codex-path-cards,
+.home-latest-grid,
 .home-section-grid,
 .codex-prereq-grid,
 .codex-check-grid
@@ -385,8 +397,50 @@ body
 .codex-check-grid
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr))
 
+.image2-flow
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(132px, 1fr))
+  gap: 12px
+  margin: 20px 0 30px
+
+.image2-flow section
+  min-width: 0
+  padding: 16px
+  border-radius: 8px
+  color: var(--tc-text)
+  background: var(--tc-card-bg)
+  border: 1px solid var(--tc-card-border)
+  box-shadow: var(--tc-card-shadow)
+
+.image2-flow span
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  width: 34px
+  height: 34px
+  margin-bottom: 12px
+  border-radius: 8px
+  color: var(--tc-button-text)
+  background: var(--tc-button-bg)
+  font-weight: 900
+
+.image2-flow strong
+  display: block
+  margin-bottom: 7px
+  color: var(--tc-heading)
+  font-size: 1.02rem
+
+.image2-flow p
+  margin: 0
+  text-align: left
+  line-height: 1.6
+
 .quickstart-cards
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))
+  gap: 16px
+
+.home-latest-grid
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))
   gap: 16px
 
 .codex-path-cards
@@ -400,6 +454,7 @@ body
 
 .docs-hub-card,
 .quickstart-card,
+.home-latest-card,
 .codex-path-card
   display: block
   padding: 20px
@@ -411,9 +466,30 @@ body
   transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease
 
 .quickstart-card,
+.home-latest-card,
 .codex-path-card
   padding: 22px
 
+.tc-article-link-card,
+.home-latest-card
+  position: relative
+  overflow: hidden
+  background: var(--tc-article-link-bg)
+  border-color: var(--tc-article-link-border)
+  box-shadow: var(--tc-article-link-shadow)
+
+.tc-article-link-card:before,
+.home-latest-card:before
+  content: ''
+  position: absolute
+  left: 0
+  top: 0
+  bottom: 0
+  width: 4px
+  background: var(--tc-accent)
+  opacity: .9
+
+.home-latest-card,
 .codex-path-card
   display: flex
   flex-direction: column
@@ -421,6 +497,7 @@ body
 
 .docs-hub-card:hover,
 .quickstart-card:hover,
+.home-latest-card:hover,
 .codex-path-card:hover,
 .home-section-grid section:hover
   transform: translateY(-4px)
@@ -428,12 +505,17 @@ body
   background: var(--tc-card-hover)
   box-shadow: var(--tc-card-shadow)
 
+.tc-article-link-card:hover,
+.home-latest-card:hover
+  border-color: var(--tc-accent)
+  background: var(--tc-article-link-hover)
+  box-shadow: var(--tc-article-link-shadow)
+
 .docs-hub-card span,
 .quickstart-card span,
 .codex-path-card span,
 .quickstart-flow span,
-.codex-step-copy span,
-.ai-time-item span
+.codex-step-copy span
   display: inline-flex
   margin-bottom: 10px
   color: var(--tc-link)
@@ -444,6 +526,62 @@ body
 .codex-path-card span
   margin-bottom: 12px
   color: var(--tc-accent-strong)
+
+.tc-article-link-card span
+  width: max-content
+  padding: 4px 9px
+  border-radius: 999px
+  color: var(--tc-accent-strong)
+  background: var(--tc-accent-soft)
+  border: 1px solid var(--tc-accent-border)
+  font-size: .82rem
+  font-weight: 800
+
+.home-latest-card__label,
+.home-latest-card__date,
+.home-latest-card__title
+  display: inline-flex
+  margin-bottom: 10px
+  letter-spacing: 0
+
+.home-latest-card__label
+  width: max-content
+  padding: 4px 9px
+  border-radius: 999px
+  color: var(--tc-accent-strong)
+  background: var(--tc-accent-soft)
+  border: 1px solid var(--tc-accent-border)
+  font-size: .82rem
+  font-weight: 800
+
+.home-latest-card__date
+  color: var(--tc-muted)
+  font-size: .88rem
+  font-weight: 700
+
+.home-latest-card__title
+  display: block
+  margin-bottom: 10px
+  color: var(--tc-heading)
+  font-size: 1.2rem
+  font-weight: 900
+  line-height: 1.35
+
+.home-latest-card__badge
+  position: absolute
+  top: 14px
+  right: 14px
+  z-index: 1
+  display: inline-flex
+  align-items: center
+  min-height: 24px
+  padding: 3px 9px
+  border-radius: 999px
+  color: var(--tc-button-text)
+  background: var(--tc-button-bg)
+  font-size: .78rem
+  font-weight: 900
+  box-shadow: 0 8px 18px var(--tc-accent-soft)
 
 .codex-step-copy span
   font-weight: 900
@@ -463,13 +601,13 @@ body
 
 .docs-hub-card p,
 .quickstart-card p,
+.home-latest-card p,
 .codex-path-card p,
 .home-section-grid p,
 .quickstart-flow p,
 .codex-prereq-grid p,
 .codex-note p,
-.codex-check-panel p,
-.ai-time-item p
+.codex-check-panel p
   margin: 0
   text-align: left
   color: var(--tc-text)
@@ -481,12 +619,48 @@ body
 .quickstart-card p
   margin-bottom: 16px
 
+.home-latest-card p
+  flex: 1
+  margin-bottom: 18px
+  line-height: 1.7
+
 .codex-path-card p
   flex: 1
   line-height: 1.7
 
 .quickstart-card strong
   color: var(--tc-link)
+
+.home-latest-card strong
+  display: inline-flex
+  align-items: center
+  gap: 8px
+  width: max-content
+  min-height: 36px
+  margin-top: auto
+  padding: 8px 13px
+  border-radius: 6px
+  color: var(--tc-button-text) !important
+  background: var(--tc-button-bg)
+  font-weight: 800
+  box-shadow: 0 10px 22px var(--tc-accent-soft)
+
+.home-latest-card strong i
+  font-size: .88rem
+
+.home-latest-card
+  position: relative
+
+.home-latest-card.is-new
+  padding-right: 76px
+
+.home-latest-empty
+  margin: 18px 0 30px
+  padding: 16px 18px
+  border-radius: 8px
+  color: var(--tc-muted)
+  background: var(--tc-card-bg)
+  border: 1px solid var(--tc-card-border)
 
 .codex-path-card strong,
 .site-portal-link
@@ -523,8 +697,7 @@ body
 .quickstart-flow section,
 .codex-prereq-grid section,
 .codex-check-grid section,
-.home-section-grid section,
-.ai-time-item
+.home-section-grid section
   padding: 18px
   border-radius: 8px
   background: var(--tc-card-bg)
@@ -535,8 +708,7 @@ body
 
 .quickstart-flow strong,
 .codex-prereq-grid strong,
-.codex-check-grid strong,
-.ai-time-item strong
+.codex-check-grid strong
   display: block
   margin-bottom: 8px
   color: var(--tc-heading)
@@ -591,6 +763,16 @@ body
   background: var(--tc-card-bg)
   border: 1px solid var(--tc-card-border)
   box-shadow: var(--tc-card-shadow)
+
+.image2-step-card
+  grid-template-columns: minmax(260px, .86fr) minmax(320px, 1.34fr)
+
+.image2-result-card
+  grid-template-columns: minmax(250px, .72fr) minmax(340px, 1.52fr)
+
+.image2-result-card .codex-shot img
+  max-height: 760px
+  object-fit: contain
 
 .codex-step-copy,
 .codex-shot
@@ -768,52 +950,6 @@ body.codex-image-modal-open
   margin: 0
   padding: 0 16px 16px
   text-align: left
-
-.ai-timeline
-  position: relative
-  margin: 18px 0 0
-  padding-left: 20px
-
-.ai-timeline:before
-  content: ''
-  position: absolute
-  left: 4px
-  top: 6px
-  bottom: 8px
-  width: 2px
-  background: linear-gradient(to bottom, var(--tc-accent), var(--tc-chip-border))
-
-.ai-time-item
-  position: relative
-  margin: 0 0 16px
-  padding: 14px 16px
-
-.ai-time-item:before
-  content: ''
-  position: absolute
-  left: -21px
-  top: 20px
-  width: 10px
-  height: 10px
-  border-radius: 50%
-  background: var(--tc-accent)
-  box-shadow: 0 0 0 4px var(--tc-accent-soft)
-
-.ai-time-item span
-  display: inline-block
-  min-width: 54px
-
-.ai-time-item p
-  margin-top: 8px
-  font-size: .95rem
-
-.ai-time-pending
-  background: var(--tc-accent-soft)
-  border-color: var(--tc-accent-border)
-
-.ai-time-pending span
-  color: var(--tc-accent-strong)
-  min-width: 88px
 
 .tc-site-catalog
   display: none
@@ -1231,6 +1367,9 @@ body.codex-image-modal-open
   transform: translateX(-8px) !important
 
 @media screen and (max-width: 500px)
+  #l_cover .cover-wrapper#full .cover-body .top
+    transform: translateY(-24px)
+
   .cover-wrapper .cover-body .title
     transform: scaleX(1.04)
 
@@ -1268,6 +1407,9 @@ body.codex-image-modal-open
   .codex-step-card
     grid-template-columns: 1fr
     padding: 18px
+
+  .image2-flow
+    grid-template-columns: 1fr
 
   .codex-step-copy h3
     font-size: 1.12rem

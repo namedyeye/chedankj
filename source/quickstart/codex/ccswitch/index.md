@@ -3,6 +3,9 @@ title: 使用 CC Switch 接入 Codex
 layout: page
 date: 2026-06-08 21:56:00
 cover: true
+home_latest: true
+home_label: Token 源切换
+home_excerpt: 适合已经使用过 Codex 的用户，通过 CD 中转创建 Key、导入 CC Switch，并测试当前配置是否可用。
 ---
 
 <div class="codex-guide-hero">

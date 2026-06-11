@@ -13,7 +13,7 @@ navbar:
     - name: 文档
       icon: fa-solid fa-book-open
       url: docs/
-    - name: 技巧教学
+    - name: 技巧
       icon: fa-solid fa-graduation-cap
       url: tutorials/
     - name: 配置问题
@@ -41,7 +41,7 @@ cover:
   logo:
   title: "CD'Blog"
   subtitle: "AI 技术分享&问题解决&应用案例"
-  search: 搜索快速上手、技巧教学、配置问题
+  search: 搜索快速上手、技巧、配置问题
   features:
     - name: 快速上手
       icon: fa-solid fa-bolt
@@ -51,7 +51,7 @@ cover:
       icon: fa-solid fa-book-open
       img:
       url: docs/
-    - name: 技巧教学
+    - name: 技巧
       icon: fa-solid fa-graduation-cap
       img:
       url: tutorials/

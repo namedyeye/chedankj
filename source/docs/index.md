@@ -9,7 +9,7 @@ cover: true
 <div class="docs-hub">
   <p class="docs-hub-eyebrow">文档中心</p>
   <h2>统一管理 TechChedan 的全部内容文档。</h2>
-  <p>快速上手、技巧教学、配置问题和案例示例都归入文档体系。顶部导航保留常用入口，文档页负责承接完整目录和后续扩展。</p>
+  <p>快速上手、技巧、配置问题和案例示例都归入文档体系。顶部导航保留常用入口，文档页负责承接完整目录和后续扩展。</p>
 </div>
 
 ## 核心文档
@@ -22,7 +22,7 @@ cover: true
   </a>
   <a class="docs-hub-card" href="/chedankj/tutorials/">
     <span>Tutorials</span>
-    <h3>技巧教学</h3>
+    <h3>技巧</h3>
     <p>Prompt、Agent 工作流、自动化脚本和可复用操作方法。</p>
   </a>
   <a class="docs-hub-card" href="/chedankj/config-issues/">
