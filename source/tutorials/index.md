@@ -14,7 +14,7 @@ cover: true
 ## 方法教程
 
 <div class="docs-hub-grid">
-  <a class="docs-hub-card tc-article-link-card" href="/chedankj/tutorials/image2-codex/">
+  <a class="docs-hub-card tc-article-link-card" href="/tutorials/image2-codex/">
     <span>Image2</span>
     <h3>如何在 Codex 使用 Image2</h3>
     <p>通过专用 skill 在 Codex 中调用 Image2，完成文字生图、参考图编辑、image 分组 Key 授权和结果验证。</p>

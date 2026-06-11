@@ -21,7 +21,7 @@ home_excerpt: 通过 chedan-image2 skill 在 Codex 中调用 Image2，完成安�
   </div>
 </div>
 
-<script src="/chedankj/js/codex-image-preview.js" defer></script>
+<script src="/js/codex-image-preview.js" defer></script>
 
 <div class="codex-note">
   <strong>适用范围</strong>
@@ -88,7 +88,7 @@ home_excerpt: 通过 chedan-image2 skill 在 Codex 中调用 Image2，完成安�
     <p>如果你使用的是其他来源的 skill，也要确认它至少包含 <code>SKILL.md</code>、脚本文件和必要的 agent 配置。缺少这些文件时，Codex 无法识别或调用该技能。</p>
   </div>
   <figure class="codex-shot">
-    <img src="/chedankj/images/image2-codex/image2-skill-package.png" alt="chedan-image2-skill 压缩包">
+    <img src="/images/image2-codex/image2-skill-package.png" alt="chedan-image2-skill 压缩包">
     <figcaption>准备 Image2 专用 skill 压缩包</figcaption>
   </figure>
 </div>
@@ -103,7 +103,7 @@ home_excerpt: 通过 chedan-image2 skill 在 Codex 中调用 Image2，完成安�
     <p>安装完成后，重点看两件事：一是安装位置是否在 <code>C:\Users\你的用户名\.codex\skills\chedan-image2</code>；二是 Codex 是否提示 <code>Restart Codex to pick up new skills.</code>。看到这个提示后，需要完全退出并重新打开 Codex。</p>
   </div>
   <figure class="codex-shot">
-    <img src="/chedankj/images/image2-codex/image2-install-skill.png" alt="Codex 安装 chedan-image2 skill 并提示重启">
+    <img src="/images/image2-codex/image2-install-skill.png" alt="Codex 安装 chedan-image2 skill 并提示重启">
     <figcaption>安装成功后重启 Codex，让新 skill 生效</figcaption>
   </figure>
 </div>
@@ -123,7 +123,7 @@ home_excerpt: 通过 chedan-image2 skill 在 Codex 中调用 Image2，完成安�
     <p>如果是从文字生成图片，说明主体、构图、风格、尺寸和用途即可。如果是编辑图片，先上传参考图，再说明要保留什么、修改什么、输出成什么风格。</p>
   </div>
   <figure class="codex-shot">
-    <img src="/chedankj/images/image2-codex/image2-select-skill.png" alt="在 Codex 输入框中选择 Chedan Image2 skill">
+    <img src="/images/image2-codex/image2-select-skill.png" alt="在 Codex 输入框中选择 Chedan Image2 skill">
     <figcaption>在技能列表中选择 Chedan Image2</figcaption>
   </figure>
 </div>
@@ -143,7 +143,7 @@ home_excerpt: 通过 chedan-image2 skill 在 Codex 中调用 Image2，完成安�
     <p>把新建的 Key 发送回当前 Codex 对话即可。这个 Key 会用于当前命令的环境变量，不会写入你的项目文件。后续同一个对话继续使用 Image2 时，不需要重复提供。</p>
   </div>
   <figure class="codex-shot">
-    <img src="/chedankj/images/image2-codex/image2-send-key.png" alt="Codex 提示创建 image 分组 Key 并发送脱敏密钥">
+    <img src="/images/image2-codex/image2-send-key.png" alt="Codex 提示创建 image 分组 Key 并发送脱敏密钥">
     <figcaption>创建 image 分组 Key 后发回当前对话</figcaption>
   </figure>
 </div>
@@ -163,7 +163,7 @@ home_excerpt: 通过 chedan-image2 skill 在 Codex 中调用 Image2，完成安�
     <p>下面示例是一张靶向药机制图，画面包含纳米颗粒进入肿瘤细胞、定位线粒体、ROS 升高、膜电位下降、ATP 下降和凋亡激活等关键过程。</p>
   </div>
   <figure class="codex-shot">
-    <img src="/chedankj/images/image2-codex/image2-result-example.png" alt="Image2 生成的线粒体靶向治疗机制图示例">
+    <img src="/images/image2-codex/image2-result-example.png" alt="Image2 生成的线粒体靶向治疗机制图示例">
     <figcaption>Image2 生成结果示例：线粒体靶向治疗机制图</figcaption>
   </figure>
 </div>
@@ -210,4 +210,4 @@ home_excerpt: 通过 chedan-image2 skill 在 Codex 中调用 Image2，完成安�
   </details>
 </div>
 
-<p><a href="/chedankj/tutorials/">返回技巧 / 方法教程</a></p>
+<p><a href="/tutorials/">返回技巧 / 方法教程</a></p>

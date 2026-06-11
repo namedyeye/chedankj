@@ -37,7 +37,7 @@ cover:
     home: true
     archive: true
     others: false
-  background: /chedankj/images/bikini-bottom-fish-cover.png
+  background: /images/bikini-bottom-fish-cover.png
   logo:
   title: "CD'Blog"
   subtitle: "AI 技术分享&问题解决&应用案例"

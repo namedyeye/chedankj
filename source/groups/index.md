@@ -17,7 +17,7 @@ cover: true
     </div>
   </div>
   <div class="group-qr-card">
-    <img src="/chedankj/images/qq-group-1084605145-qr.png" alt="TechChedan QQ 交流群二维码">
+    <img src="/images/qq-group-1084605145-qr.png" alt="TechChedan QQ 交流群二维码">
   </div>
 </div>
 

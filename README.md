@@ -23,12 +23,12 @@ npm run server
 ## 发布到 GitHub Pages
 
 1. 当前配置使用 GitHub 项目仓库 `namedyeye/chedankj`。
-2. 当前公网访问地址应为 `https://namedyeye.github.io/chedankj/`。
-3. `_config.yml` 已按项目仓库路径配置：
+2. 当前公网访问地址应为 `https://blog.chedankj.com/`。
+3. `_config.yml` 已按自定义域名根路径配置：
 
 ```yml
-url: https://namedyeye.github.io/chedankj
-root: /chedankj/
+url: https://blog.chedankj.com
+root: /
 ```
 
 4. 推送到 GitHub：
@@ -38,6 +38,6 @@ git remote add origin https://github.com/namedyeye/chedankj.git
 git push -u origin main
 ```
 
-5. 在 GitHub 仓库的 `Settings > Pages` 中，将 `Build and deployment` 的 `Source` 设置为 `GitHub Actions`。
+5. 在 GitHub 仓库的 `Settings > Pages` 中，将 `Build and deployment` 的 `Source` 设置为 `GitHub Actions`，并在 `Custom domain` 中保存 `blog.chedankj.com`。
 
 后续每次向 `main` 分支推送代码，`.github/workflows/pages.yml` 都会自动构建并发布 `public/` 目录。

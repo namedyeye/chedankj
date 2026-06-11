@@ -25,13 +25,13 @@ cover: true
 ## 选择你的路径
 
 <div class="codex-path-cards">
-  <a class="codex-path-card" href="/chedankj/quickstart/codex/manual/">
+  <a class="codex-path-card" href="/quickstart/codex/manual/">
     <span>第一次安装使用 Codex</span>
     <h3>手动配置路径</h3>
     <p>适合第一次安装 Codex 的用户。按现有教程完成安装、创建中转密钥、写入本地 auth.json 和 config.toml，并在最后重启验证。</p>
     <strong>进入手动教程</strong>
   </a>
-  <a class="codex-path-card" href="/chedankj/quickstart/codex/ccswitch/">
+  <a class="codex-path-card" href="/quickstart/codex/ccswitch/">
     <span>使用过并想更换 Token 源</span>
     <h3>CC Switch 配置路径</h3>
     <p>适合已经使用过 Codex 的用户。通过 CD 中转创建 Key，再导入到 CC Switch，由 CC Switch 接管供应商配置和 Token 源切换。</p>

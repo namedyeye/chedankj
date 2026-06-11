@@ -22,7 +22,7 @@ home_excerpt: 从安装 Codex、创建中转密钥，到写入 auth.json 和 con
   </div>
 </div>
 
-<script src="/chedankj/js/codex-image-preview.js" defer></script>
+<script src="/js/codex-image-preview.js" defer></script>
 
 <div class="codex-note">
   <strong>适用范围</strong>
@@ -61,7 +61,7 @@ home_excerpt: 从安装 Codex、创建中转密钥，到写入 auth.json 和 con
     <p>在 Windows 搜索框输入 <code>store</code> 打开 Microsoft Store，搜索 <code>codex</code>，找到 Codex 后点击安装或获取。</p>
   </div>
   <figure class="codex-shot">
-    <img src="/chedankj/images/codex-install/codex-step-01.png" alt="在 Microsoft Store 中搜索并安装 Codex">
+    <img src="/images/codex-install/codex-step-01.png" alt="在 Microsoft Store 中搜索并安装 Codex">
     <figcaption>Microsoft Store 搜索 Codex 并安装</figcaption>
   </figure>
 </div>
@@ -73,7 +73,7 @@ home_excerpt: 从安装 Codex、创建中转密钥，到写入 auth.json 和 con
     <p>安装完成后启动 Codex。若它提示需要登录 OpenAI 账号，可以先关闭窗口，并在系统托盘里退出后台进程，后续改用本地配置接入中转密钥。</p>
   </div>
   <figure class="codex-shot">
-    <img src="/chedankj/images/codex-install/codex-step-02.png" alt="从系统托盘退出 Codex 后台">
+    <img src="/images/codex-install/codex-step-02.png" alt="从系统托盘退出 Codex 后台">
     <figcaption>从系统托盘退出 Codex</figcaption>
   </figure>
 </div>
@@ -88,7 +88,7 @@ home_excerpt: 从安装 Codex、创建中转密钥，到写入 auth.json 和 con
     <p>创建时需要选择模型分组。不同模型组的能力和计价不同，建议先按页面中的说明选择适合自己的分组，再完成创建。</p>
   </div>
   <figure class="codex-shot">
-    <img src="/chedankj/images/codex-install/codex-step-03.png" alt="在 CD 中转控制台创建 API 密钥">
+    <img src="/images/codex-install/codex-step-03.png" alt="在 CD 中转控制台创建 API 密钥">
     <figcaption>创建 API 密钥并选择模型分组</figcaption>
   </figure>
 </div>
@@ -103,7 +103,7 @@ home_excerpt: 从安装 Codex、创建中转密钥，到写入 auth.json 和 con
     <p>如果看不到 <code>.codex</code> 文件夹，先在资源管理器中打开“查看 - 显示 - 隐藏的项目”。后续创建 <code>auth.json</code> 和 <code>config.toml</code> 时，也建议打开“文件扩展名”显示，避免把文件保存成 <code>auth.json.txt</code>。</p>
   </div>
   <figure class="codex-shot">
-    <img src="/chedankj/images/codex-install/codex-step-04.png" alt="打开 Windows 用户目录下的 .codex 文件夹">
+    <img src="/images/codex-install/codex-step-04.png" alt="打开 Windows 用户目录下的 .codex 文件夹">
     <figcaption>显示隐藏项目并进入 .codex 目录</figcaption>
   </figure>
 </div>
@@ -118,7 +118,7 @@ home_excerpt: 从安装 Codex、创建中转密钥，到写入 auth.json 和 con
     <p>重命名时务必确认扩展名是 <code>.json</code>，不是 <code>.txt</code>。Windows 弹出“修改扩展名可能导致文件不可用”的提示时，确认即可。</p>
   </div>
   <figure class="codex-shot">
-    <img src="/chedankj/images/codex-install/codex-step-05.png" alt="在 .codex 目录中新建 auth.json 文件">
+    <img src="/images/codex-install/codex-step-05.png" alt="在 .codex 目录中新建 auth.json 文件">
     <figcaption>新建 auth.json 并确认文件扩展名</figcaption>
   </figure>
 </div>
@@ -136,7 +136,7 @@ home_excerpt: 从安装 Codex、创建中转密钥，到写入 auth.json 和 con
     </div>
   </div>
   <figure class="codex-shot">
-    <img src="/chedankj/images/codex-install/codex-step-06.png" alt="复制并保存 auth.json 配置内容">
+    <img src="/images/codex-install/codex-step-06.png" alt="复制并保存 auth.json 配置内容">
     <figcaption>把平台生成的 auth.json 内容粘贴到本机文件</figcaption>
   </figure>
 </div>
@@ -160,7 +160,7 @@ requires_openai_auth = true</code></pre>
     </div>
   </div>
   <figure class="codex-shot">
-    <img src="/chedankj/images/codex-install/codex-step-07.png" alt="复制并保存 config.toml 配置内容">
+    <img src="/images/codex-install/codex-step-07.png" alt="复制并保存 config.toml 配置内容">
     <figcaption>把平台生成的 config.toml 内容粘贴到本机文件</figcaption>
   </figure>
 </div>

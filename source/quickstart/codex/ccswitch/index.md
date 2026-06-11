@@ -21,7 +21,7 @@ home_excerpt: 适合已经使用过 Codex 的用户，通过 CD 中转创建 Key
   </div>
 </div>
 
-<script src="/chedankj/js/codex-image-preview.js" defer></script>
+<script src="/js/codex-image-preview.js" defer></script>
 
 <div class="codex-note">
   <strong>适用范围</strong>
@@ -61,7 +61,7 @@ home_excerpt: 适合已经使用过 Codex 的用户，通过 CD 中转创建 Key
     <p>创建时需要选择模型分组。不同分组的模型能力和计价倍率不同，可以先查看页面右上角的“怎么使用”说明，再根据自己的使用需求选择分组。其余开关保持默认即可，最后点击“创建”。</p>
   </div>
   <figure class="codex-shot">
-    <img src="/chedankj/images/ccswitch/ccswitch-step-01.png" alt="在 CD 中转创建用于 Codex 的 API 密钥">
+    <img src="/images/ccswitch/ccswitch-step-01.png" alt="在 CD 中转创建用于 Codex 的 API 密钥">
     <figcaption>在 CD 中转创建 Codex 使用的 API 密钥</figcaption>
   </figure>
 </div>
@@ -76,7 +76,7 @@ home_excerpt: 适合已经使用过 Codex 的用户，通过 CD 中转创建 Key
     <p>CC Switch 被拉起后，会显示“确认导入供应商配置”。核对应用类型为 <code>Codex</code>、供应商为 <code>CD中转</code>，并确认 API 端点、脱敏后的 API 密钥和模型信息无误，然后点击“导入”。</p>
   </div>
   <figure class="codex-shot">
-    <img src="/chedankj/images/ccswitch/ccswitch-step-02.png" alt="把 CD 中转密钥导入到 CC Switch">
+    <img src="/images/ccswitch/ccswitch-step-02.png" alt="把 CD 中转密钥导入到 CC Switch">
     <figcaption>点击“导入到 CCS”后，在 CC Switch 中确认导入</figcaption>
   </figure>
 </div>
@@ -96,7 +96,7 @@ home_excerpt: 适合已经使用过 Codex 的用户，通过 CD 中转创建 Key
     <p>如果测试失败，优先检查密钥是否仍然有效、模型分组是否可用、当前网络是否能访问 CD 中转，以及导入时的 API 端点是否被改动。</p>
   </div>
   <figure class="codex-shot">
-    <img src="/chedankj/images/ccswitch/ccswitch-step-03.png" alt="在 CC Switch 中点击测试按钮">
+    <img src="/images/ccswitch/ccswitch-step-03.png" alt="在 CC Switch 中点击测试按钮">
     <figcaption>点击测试按钮，检查供应商配置是否可用</figcaption>
   </figure>
 </div>
@@ -111,7 +111,7 @@ home_excerpt: 适合已经使用过 Codex 的用户，通过 CD 中转创建 Key
     <p>如果 Codex 能返回结果，再回到 CD 中转控制台查看使用记录或余额变化，确认请求已经走到刚创建的 Key。</p>
   </div>
   <figure class="codex-shot">
-    <img src="/chedankj/images/ccswitch/ccswitch-step-04.png" alt="Codex 返回测试消息，表示配置可用">
+    <img src="/images/ccswitch/ccswitch-step-04.png" alt="Codex 返回测试消息，表示配置可用">
     <figcaption>Codex 能正常回复，说明当前 Token 源已接入成功</figcaption>
   </figure>
 </div>
@@ -129,8 +129,8 @@ home_excerpt: 适合已经使用过 Codex 的用户，通过 CD 中转创建 Key
   </details>
   <details>
     <summary>Codex 仍然不能回复怎么办？</summary>
-    <p>先确认 CC Switch 中当前配置处于启用状态，再完全退出并重新打开 Codex。若仍然失败，可以把现象和截图反馈到<a href="/chedankj/groups/">群组页面</a>，方便继续排查。</p>
+    <p>先确认 CC Switch 中当前配置处于启用状态，再完全退出并重新打开 Codex。若仍然失败，可以把现象和截图反馈到<a href="/groups/">群组页面</a>，方便继续排查。</p>
   </details>
 </div>
 
-<p><a href="/chedankj/quickstart/codex/">返回 Codex 路径选择</a></p>
+<p><a href="/quickstart/codex/">返回 Codex 路径选择</a></p>
