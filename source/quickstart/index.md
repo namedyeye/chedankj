@@ -20,13 +20,13 @@ cover: true
 ## 安装教程
 
 <div class="quickstart-cards">
-  <a class="quickstart-card" href="/chedankj/quickstart/codex/">
+  <a class="quickstart-card tc-article-link-card" href="/chedankj/quickstart/codex/">
     <span>Codex</span>
     <h3>Codex 安装配置教程</h3>
     <p>提供首次安装的手动配置路径，也提供已使用过 Codex 后通过 CC Switch 切换 Token 源的教程。</p>
     <strong>进入教程</strong>
   </a>
-  <a class="quickstart-card" href="/chedankj/quickstart/claude-code/">
+  <a class="quickstart-card tc-article-link-card" href="/chedankj/quickstart/claude-code/">
     <span>Claude Code</span>
     <h3>Claude Code 安装配置教程</h3>
     <p>面向 Claude Code 的终端使用场景，整理安装、账号连接、项目权限和基础命令验证。</p>

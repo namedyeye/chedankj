@@ -537,6 +537,11 @@ body
   font-size: .82rem
   font-weight: 800
 
+.tc-article-link-card.quickstart-card
+  display: flex
+  flex-direction: column
+  min-height: 100%
+
 .home-latest-card__label,
 .home-latest-card__date,
 .home-latest-card__title
@@ -630,6 +635,20 @@ body
 
 .quickstart-card strong
   color: var(--tc-link)
+
+.tc-article-link-card.quickstart-card strong
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  width: max-content
+  min-height: 36px
+  margin-top: auto
+  padding: 8px 13px
+  border-radius: 6px
+  color: var(--tc-button-text) !important
+  background: var(--tc-button-bg)
+  font-weight: 800
+  box-shadow: 0 10px 22px var(--tc-accent-soft)
 
 .home-latest-card strong
   display: inline-flex
