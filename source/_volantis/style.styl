@@ -760,6 +760,48 @@ body
   background: var(--tc-button-bg-hover)
   box-shadow: 0 14px 28px var(--tc-accent-soft)
 
+.codex-download-actions
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  gap: 10px
+  margin: 14px 0 4px
+
+.codex-download-link,
+.codex-download-source
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  gap: 8px
+  min-height: 40px
+  padding: 8px 14px
+  border-radius: 6px
+  font-weight: 800
+  transition: transform .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease
+
+.codex-download-link
+  color: var(--tc-button-text) !important
+  background: var(--tc-button-bg)
+  box-shadow: 0 10px 22px var(--tc-accent-soft)
+
+.codex-download-source
+  color: var(--tc-link) !important
+  background: var(--tc-card-bg)
+  border: 1px solid var(--tc-card-border)
+
+.codex-download-link:hover,
+.codex-download-source:hover
+  transform: translateY(-2px)
+
+.codex-download-link:hover
+  color: var(--tc-button-text) !important
+  background: var(--tc-button-bg-hover)
+
+.codex-download-source:hover
+  color: var(--tc-accent-strong) !important
+  background: var(--tc-card-hover)
+  border-color: var(--tc-card-border-hover)
+
 .quickstart-flow section,
 .codex-prereq-grid section,
 .codex-check-grid section,
@@ -1473,6 +1515,10 @@ body.codex-image-modal-open
     font-size: 1.28rem
 
   .site-portal-link
+    width: 100%
+
+  .codex-download-link,
+  .codex-download-source
     width: 100%
 
   .codex-step-card

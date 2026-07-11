@@ -30,7 +30,17 @@ home_excerpt: 通过备份并替换本地 models_cache.json，恢复缺失的 GP
 
 <div class="codex-note">
   <strong>文件说明</strong>
-  <p>下载本文使用的 <a href="/downloads/codex/models_cache.json" download><code>models_cache.json</code></a>。该文件对应客户端版本 <code>0.144.0</code>，缓存获取时间为 2026-07-11，用于恢复本地模型目录；客户端版本明显更新后，应优先使用与新版本匹配的缓存文件。</p>
+  <div class="codex-download-actions">
+    <a class="codex-download-link" href="https://github.com/namedyeye/chedankj/raw/refs/heads/main/source/downloads/codex/models_cache.json" target="_blank" rel="noopener noreferrer">
+      <i class="fa-solid fa-download" aria-hidden="true"></i>
+      <span>下载 models_cache.json</span>
+    </a>
+    <a class="codex-download-source" href="https://github.com/namedyeye/chedankj/blob/main/source/downloads/codex/models_cache.json" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-github" aria-hidden="true"></i>
+      <span>在 GitHub 查看文件</span>
+    </a>
+  </div>
+  <p>该文件对应客户端版本 <code>0.144.0</code>，缓存获取时间为 2026-07-11，用于恢复本地模型目录；客户端版本明显更新后，应优先使用与新版本匹配的缓存文件。</p>
 </div>
 
 ## 先判断是不是同一个问题
