@@ -16,9 +16,11 @@ cover: true
       <span>备注：AI 技术交流</span>
     </div>
   </div>
-  <div class="group-qr-card">
+  <figure class="group-qr-card">
+    <span>QQ 交流群</span>
     <img src="/images/qq-group-1084605145-qr.png" alt="TechChedan QQ 交流群二维码">
-  </div>
+    <figcaption>群号：1084605145</figcaption>
+  </figure>
 </div>
 
 ## 群组定位
