@@ -51,6 +51,8 @@
       children:
         - title: 配置问题
           path: config-issues/
+        - title: Codex GPT-5.6 模型列表缺失修复
+          path: config-issues/codex-gpt-5-6-model-missing/
 
 - title: 示例
   path: examples/
